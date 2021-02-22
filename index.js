@@ -23,7 +23,7 @@ mongoose.connect(config.MONGO_URI, {
   .catch(err => console.log(err))
 
 
-app.get('/', (req, res) => res.send('Hello World! ~ 안녕하세요 오늘은 설날연휴 마지막 날이네요!! 드디어 코로나도 끝나가고 다들 희망적인 삶으로 돌아가고자하는 일들이 많이 일어나고 있어요!!!'))
+app.get('/', (req, res) => res.send('Hello World!'))
 
 app.post('/register', (req, res) => {
 
