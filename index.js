@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const { User } = require("./models/User");
-
+const { auth } = require('./middleware/auth');
 
 
 //application/x--www-from-urlencoded
@@ -25,7 +25,7 @@ mongoose.connect(config.MONGO_URI, {
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.post('/register', (req, res) => {
+app.post('/api/user/register', (req, res) => {
 
   const user = new User(req.body)
 
@@ -71,5 +71,18 @@ app.post('/login', (req, res) => {
     })
   })
 })
+
+
+app.post('/api/user/auth', auth, (req, res) => {
+
+  
+
+})
+
+
+
+
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
