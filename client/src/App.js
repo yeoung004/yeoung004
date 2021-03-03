@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import LandingPage from './components/views/LandingPage/LandingPage'
+import LoginPage from './components/views/LoginPage/LoginPage'
+import RegisterPage from './components/views/RegisterPage/RegisterPage'
 
 function App() {
   return (
@@ -21,13 +23,9 @@ function App() {
           of them to render at a time
         */}
         <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route path="/about">
-          </Route>
-          <Route path="/dashboard">
-          </Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/LoginPage" component={LoginPage} />
+          <Route path="/RegisterPage" component={RegisterPage} />
         </Switch>
       </div>
     </Router>
