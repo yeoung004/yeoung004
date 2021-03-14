@@ -3,10 +3,8 @@ const app = express() //create new app express
 const port = 5000
 const bodyParser = require('../node_modules/body-parser');
 const cookieParser = require('../node_modules/cookie-parser');
-const config = {
-  MONGO_URI: process.env.MONGO_URI
-}
-//const config = require('./server/config/key');
+
+const config = require('./config/key');
 const { User } = require("./models/User");
 const { auth } = require('./middleware/auth');
 
@@ -20,7 +18,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 const mongoose = require('mongoose')
-console.log(config.MONGO_URI);
 mongoose.connect(config.MONGO_URI, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected...'))
