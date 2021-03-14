@@ -1,10 +1,10 @@
-import React, {useEffct} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios';
 
 function LandingPage() {
 
-    useEffct(()=>{
-        axios.get('http://localhost:5000/api/hello')
+    useEffect(()=>{
+        axios.get('/api/hello')
         .then(response => console.log(response.data))
     }, [])
     return (
