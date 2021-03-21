@@ -1,4 +1,3 @@
-import { response } from 'express';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
@@ -33,7 +32,7 @@ function LoginPage(props){
                 if(response.payload.loginSuccess){
                     props.history.push('/')
                 } else {
-                    alret('Error')
+                    alert('Error')
                 }
             })
     }
