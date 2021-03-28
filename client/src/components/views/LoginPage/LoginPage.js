@@ -51,8 +51,8 @@ function LoginPage(props){
                 <input type="Password" value={Password} onChange={onPasswordHandler}/>
 
                 <br />
-                <button>
-                    Login
+                <button type='submit'>
+                    로그인
                 </button>
             </form>
         </div>
