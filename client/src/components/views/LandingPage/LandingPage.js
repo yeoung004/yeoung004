@@ -10,7 +10,7 @@ function LandingPage() {
     }, [])
 
     const onClickHandler = () =>{
-        axios.get('api/users/logout')
+        axios.get('api/user/logout')
         .then(response => {
             if(response.data.success){
                 PromiseProvider.history.push("/login")

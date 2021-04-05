@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Axios from 'axios';
+//import Axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { auth } from '../_actions/user_action'
-import { response } from 'express';
 
 export default function (SpecificComponent, option, adminRoute = null) {
     function AuthenticationCheck(props) {
@@ -11,7 +10,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
         useEffect(() => {
             dispatch(auth()).then(response => {
                 if (!response.payload.isAuth) {
-                    if (opetion) {
+                    if (option) {
                         props.history.push('/login')
                     }
                 } else {
