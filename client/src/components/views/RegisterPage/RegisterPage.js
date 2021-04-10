@@ -48,7 +48,7 @@ function RegisterPage(props){
         dispatch(registerUser(body))
             .then(response => {
                 if(response.payload.success){
-                    props.history.push("/login")
+                    props.history.push("api/user/login")
                 } else {
                     alert("회원가입에 실패 했습니다!")
                 }

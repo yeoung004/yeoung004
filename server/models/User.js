@@ -78,7 +78,7 @@ userSchema.methods.generateToken = function(cb) {
 
 userSchema.statics.findByToken = function(token, cb) {
     var user = this;
-    jwt.verity(token, 'secretToken', function(err, decoded) {
+    jwt.verify(token, 'secretToken', function(err, decoded) {
         user.findOne({ "_id": decoded, "token": token }, function (err, user){
             if (err) return cb(err);
             cb(null, user)
